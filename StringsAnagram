@@ -1,0 +1,55 @@
+import java.util.*;
+
+public class AmagramString
+{
+    public static void main (String [] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the first string : ");   
+        String s1 = sc.nextLine();
+        
+        System.out.println("Enter the Second String : ");
+        String s2 = sc.nextLine();
+        
+        //Conver all string in lower case.
+        
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+        
+        //Check length of both strings are same
+        
+        if(s1.length() == s2.length())
+        {
+            //Convert string into character array.
+            
+            char []a1 = s1.toCharArray();
+            char []a2 = s2.toCharArray();
+            
+            //sort the array .
+            
+            Arrays.sort(a1);
+            Arrays.sort(a2);
+            
+            //if sorted char array are same
+            //then the string is anagram
+            
+            boolean result = Arrays.equals(a1,a2);
+            
+            if(result)
+            {
+                System.out.println(s1+" and "+s2+" are amagram .");
+            }
+            else
+            {
+                System.out.println(s1+" and "+s2+" are not amagram .");
+            }
+        
+        }
+        else
+        {
+            System.out.println(s1+" and "+s2+" are not amagram .");
+        }
+        
+    }
+}
